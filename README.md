@@ -1,10 +1,24 @@
 # Paired depth plot (2.5D)
 
+[![Reproducibility checks](https://github.com/misland4/--paired_depth_plot-2.5D/actions/workflows/ci.yml/badge.svg)](https://github.com/misland4/--paired_depth_plot-2.5D/actions/workflows/ci.yml)
+
 A Python script for displaying overlapping paired observations with a reproducible display-only depth offset for each pair. The supplied research example contains **9 control/experiment pairs**.
 
 ![Paired depth plot generated from the supplied research observations](docs/images/paired_depth_plot.png)
 
 The added depth dimension separates overlapping pairs; it is not a measured variable. Lines connect the two observations in each input row. The script does not perform significance testing.
+
+## Contents
+
+- [System requirements](#1-system-requirements)
+- [Installation guide](#2-installation-guide)
+- [Demo](#3-demo)
+- [Instructions for use](#4-instructions-for-use)
+- [Repository contents](#repository-contents)
+- [Troubleshooting and support](#troubleshooting-and-support)
+- [Data dictionary](docs/data.md)
+- [Reproduction record](docs/validation.md)
+- [Academic citation](#academic-citation)
 
 ## 1. System requirements
 
@@ -47,7 +61,7 @@ python3 -m venv .venv
 
 Use `.venv/bin/python` in place of `.venv\Scripts\python.exe` in the following commands. These command variants have not been tested on macOS/Linux for this release.
 
-**Installation time:** allow approximately 2–5 minutes with a working internet connection. This is a planning estimate; a clean installation was not timed, and package download speed can change it substantially.
+**Measured installation:** creating a new Windows virtual environment took 3.4 seconds, and installing dependencies took 41.6 seconds in one run. Some wheels were cached; network speed and cache state affect these times. See the [reproduction record](docs/validation.md) for details.
 
 ## 3. Demo
 
@@ -138,6 +152,35 @@ To reproduce the repository preview, run the research demo with seed `20260709` 
 .venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
+## Repository contents
+
+| Path | Purpose |
+| --- | --- |
+| `paired_depth_plot.py` | Plotting command-line script |
+| `examples/` | Research workbook and separate historical examples |
+| `docs/data.md` | Data fields, provenance and interpretation limits |
+| `docs/validation.md` | Independent installation/test record |
+| `tests/` | Input-validation and complete-output checks |
+| `.github/workflows/ci.yml` | Automated tests and demo generation |
+| `requirements.txt` | Pinned direct dependencies |
+| `requirements-windows-py313.lock.txt` | Complete tested Windows environment |
+| `CITATION.cff` | Software citation |
+| `CHANGELOG.md` | Version history |
+
+## Troubleshooting and support
+
+- **Wrong input:** check paths, Excel layout and exact column headers. Excel input reads the first worksheet.
+- **Missing/non-numeric values:** provide both values per row. Recalculate and save Excel formulas so cached numeric results exist.
+- **Cannot write outputs:** close files held open by other applications, or choose a writable `--output-dir`.
+- **Installation errors:** select Python 3.13 and install this repository's requirements. See the [tested environment](docs/validation.md).
+- **Plot/input constraints:** Depth offsets are display-only. Use the same input order and `--seed` for repeatable placement; CSV IDs must be unique.
+
+Use [GitHub Issues](https://github.com/misland4/--paired_depth_plot-2.5D/issues) to report reproducible problems; see [CONTRIBUTING.md](CONTRIBUTING.md). Known data fields and scientific context still needed from the authors are described in [docs/data.md](docs/data.md).
+
+## Version and validation
+
+Current software version: **1.0.0**. See [CHANGELOG.md](CHANGELOG.md) and [Releases](https://github.com/misland4/--paired_depth_plot-2.5D/releases) for fixed versions. Local clean-environment checks passed. The badge above links to automated checks; consult each platform job for actual passing results.
+
 ## Authors
 
 Project creators and lead maintainers:
@@ -151,8 +194,12 @@ We would like to thank Shuo Yang for his assistance with this project.
 
 ## Academic citation
 
-Academic citation information for this code will be added here when available.
+Please cite the software using [CITATION.cff](CITATION.cff), or GitHub's **Cite this repository** panel:
+
+Li, C., & Wang, Y. (2026). *Paired depth plot (2.5D)* (Version 1.0.0) [Computer software]. https://github.com/misland4/--paired_depth_plot-2.5D
+
+The associated research-paper citation has not yet been supplied; no article DOI is assumed.
 
 ## License
 
-No license has been selected. Add an appropriate license if you intend to grant reuse rights.
+The project contact has confirmed permission to reuse the code and data. The authors have not yet specified a named license or its scope, so no standard license file has been selected. This statement does not assign additional license terms; formal licensing will be added after author confirmation.

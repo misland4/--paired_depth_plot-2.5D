@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite this software repository."
+type: software
+title: "Paired depth plot (2.5D)"
+version: "1.0.0"
+date-released: "2026-10-21"
+authors:
+  - family-names: "Li"
+    given-names: "Chunying"
+    email: "lichying@fmmu.edu.cn"
+  - family-names: "Wang"
+    given-names: "Yinghan"
+    email: "wang.yinghan@qq.com"
+repository-code: "https://github.com/misland4/--paired_depth_plot-2.5D"
+url: "https://github.com/misland4/--paired_depth_plot-2.5D"
