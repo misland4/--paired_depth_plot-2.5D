@@ -1,34 +1,33 @@
-# Research data dictionary
+# Data dictionary and author-confirmed interpretation
 
 ## Source and provenance
 
-The project contact confirmed that `examples/research_pairs.xlsx` contains real research observations and that reuse is permitted. A named data license and its detailed scope have not yet been specified by the authors.
-
-The workbook is a byte-for-byte copy of the supplied `Simulated dataset to demo the code(1).xlsx`; the original worksheet name `Simulated dataset` is retained. The historical source name is not used to classify the observations as synthetic.
+`examples/research_pairs.xlsx` is a byte-for-byte copy of the supplied `Simulated dataset to demo the code(1).xlsx`; its original worksheet name `Simulated dataset` is unchanged. The repository filename is historical and does not establish data provenance. Whether this nine-pair example is simulated or actual measured data remains to be clarified; the author's explicit simulated-data response concerned the separate seven-row density example.
 
 - Source SHA-256: `5aff67627188d3528e64b775abea7a2310dae2312189e4f5dce88d7e9a1717d6`.
 - Worksheet: `Simulated dataset`.
 - Data range: B2:C10, nine complete control/experiment pairs.
+- Supplied data and exported figures: [CC BY 4.0](../LICENSES.md).
 
 ## Fields and interpretation
 
-| Field | Excel location | Meaning used by the code | Recorded unit |
+| Field | Excel location | Meaning | Unit/scale |
 | --- | --- | --- | --- |
-| Control group | B1 header; B2:B10 values | First value of each pair, plotted in blue | Numeric score; scale and units were not supplied |
-| Experiment group | C1 header; C2:C10 values | Second value of each pair, plotted in green | Numeric score; scale and units were not supplied |
+| Control group | B1 header; B2:B10 values | First value of each within-subject pair, plotted in blue | Dimensionless ordinal Lesion score |
+| Experiment group | C1 header; C2:C10 values | Second value of the same pair, plotted in green | Dimensionless ordinal Lesion score |
 | ID | Generated from input row order | Sequential display ID linking both values in a row | Not a supplied subject identifier |
 | Depth | Generated with seed 20260709 | Separates overlapping pairs for display | Not a measured variable |
 
-Column A is unused. Pairing follows the workbook's row layout. The code does not establish whether two values come from the same subject, matched subjects or another pairing design; that scientific pairing criterion must be supplied by the authors.
+The author confirms that **each row contains paired samples from the same subject**. Column A is unused. The workbook contains nine pairs; the lack of subject identifiers means the number of distinct subjects across rows is not established.
 
-The supplied control values range from 1 to 3, and the experiment values range from 0 to 2. The workbook does not define what scores 0, 1, 2 or 3 mean. The code displays numeric values without assuming a clinical, ordinal or measurement scale.
+The formal metric and vertical-axis label are **Lesion score**, a dimensionless ordinal grading. Control values range from 1 to 3 and experiment values from 0 to 2. The authors have not provided the criteria for individual grades 0, 1, 2 and 3; the script does not assign clinical category definitions to them.
 
 ## Display calculations
 
-Each pair keeps one shared, reproducible depth offset across both columns. Input row order and the random seed determine only those offsets. Scores are unchanged. Lines connect the two values of each row; the vertical range expands to include score 3. No hypothesis test or significance annotation is generated.
+Each pair keeps one shared, reproducible depth offset across both columns. Input row order and the random seed determine only these offsets; scores are unchanged. Lines connect the two values of each row and the vertical range expands to include score 3. No hypothesis test or significance annotation is generated. The authors confirm that the depth dimension is for display only and need not be described as a measured variable in the paper.
 
-## Research context awaiting author information
+## Details deferred until publication
 
-The supplied files do not specify the study/sample population, group/condition definitions, pairing criterion, score definitions/units, number of subjects or associated paper/figure. These fields will be added from the authors' description; they are not inferred from the numbers or from the display IDs.
+The authors will provide specific treatments, conditions, time points, final English group names, study background/source description and the corresponding paper/figure upon publication. Until then the plot keeps `Control group` and `Experiment group`. The manuscript is unpublished; cite the code repository.
 
-`examples/paired_values.csv` and the built-in ten-pair arrays are a separate historical example. They are not combined with the nine-pair research workbook.
+`examples/paired_values.csv` and the built-in ten-pair arrays are a separate historical software example under Apache-2.0. They are not combined with the supplied nine-pair workbook.

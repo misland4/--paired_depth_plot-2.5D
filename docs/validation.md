@@ -7,13 +7,13 @@
 - Hardware: Intel Core i5-14600KF, approximately 32 GB RAM.
 - An independent virtual environment was created for this repository without system site packages.
 - Dependencies were installed from PyPI using `requirements.txt`; `pip check` reported no broken requirements.
-- Complete suite: 3 tests passed. The research demo exported PNG, PDF and SVG.
+- Complete suite: 3 tests passed. The supplied demo exported PNG, PDF and SVG.
 
 | Stage | Measured elapsed time |
 | --- | --- |
 | Create the empty virtual environment | 3.419 seconds |
 | Install dependencies | 41.558 seconds |
-| Research demo and export all formats | 1.517 seconds |
+| Supplied demo and export all formats | 1.517 seconds |
 
 These are single-run observations, not performance guarantees. The two repository installations ran concurrently. Pip reused some cached wheels and downloaded others; these are new-environment installation times rather than cold-download benchmarks. Tests ran before the timed demo, so font caches may already have been populated.
 
@@ -42,13 +42,13 @@ tzdata==2026.5
 
 ## Automated validation
 
-The [Reproducibility checks workflow](https://github.com/misland4/--paired_depth_plot-2.5D/actions/workflows/ci.yml) installs dependencies, checks them, runs the complete suite and generates the research demo on Windows, Ubuntu and macOS with Python 3.13. Each run records its actual operating system and Python patch version. A configured matrix alone is not evidence of passing; inspect the individual job conclusions and logs.
+The [Reproducibility checks workflow](https://github.com/misland4/--paired_depth_plot-2.5D/actions/workflows/ci.yml) installs dependencies, checks them, runs the complete suite and generates the supplied demo on Windows, Ubuntu and macOS with Python 3.13. Each run records its actual operating system and Python patch version. A configured matrix alone is not evidence of passing; inspect the individual job conclusions and logs.
 
 Demo PNG/PDF/SVG files are retained as workflow artifacts for seven days. Font substitutions can change typography between operating systems even when input values and pairing are identical.
 
 ## Verified automated run
 
-The [initial version-1.0.0 validation run](https://github.com/misland4/--paired_depth_plot-2.5D/actions/runs/39546881373) completed successfully for commit `b128183c53d4b9d51941b39c0f62a2b24db6e362`. All three platform jobs passed dependency installation, `pip check`, the complete unit-test suite, research-demo generation and artifact upload.
+The [initial version-1.0.0 validation run](https://github.com/misland4/--paired_depth_plot-2.5D/actions/runs/39546881373) completed successfully for commit `b128183c53d4b9d51941b39c0f62a2b24db6e362`. All three platform jobs passed dependency installation, `pip check`, the complete unit-test suite, demo generation and artifact upload.
 
 | GitHub-hosted runner family | Python series | Result |
 | --- | --- | --- |
@@ -56,4 +56,10 @@ The [initial version-1.0.0 validation run](https://github.com/misland4/--paired_
 | Ubuntu | 3.13 | Passed |
 | macOS | 3.13 | Passed |
 
-These are hosted-runner results rather than tests on every version of each operating system. Consult the run's environment step for exact versions. This documentation update does not change the validated plotting code, workbooks or dependencies.
+These are hosted-runner results rather than tests on every version of each operating system. Consult the run's environment step for exact versions. This is the historical version-1.0.0 result. Version 1.0.1 updates the author-confirmed documentation and licensing and adds the Lesion score axis label. Input workbook bytes and dependency versions are unchanged. Current runs are available from the workflow link above.
+
+## Version 1.0.1 local recheck
+
+On 2026-10-21 the existing isolated Windows 11 / Python 3.13.9 environment was reused. `pip check` passed and all 3 tests passed. The supplied workbook exported PNG, PDF and SVG. The original workbook SHA-256 still matches [the data dictionary](data.md); requirements and numerical inputs are unchanged. No new dependency-installation timing is claimed.
+
+The regenerated preview was visually checked for the Lesion score label. Export explicitly includes the projected vertical-axis label in the tight bounding box so it is not clipped.

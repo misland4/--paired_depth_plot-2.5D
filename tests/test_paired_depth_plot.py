@@ -38,7 +38,7 @@ class PairedPlotTests(unittest.TestCase):
             self.assertIn("unique", result.stderr)
             self.assertNotIn("Traceback", result.stderr)
 
-    def test_research_excel_pairs_produce_three_formats(self):
+    def test_supplied_excel_pairs_produce_three_formats(self):
         with tempfile.TemporaryDirectory() as tmp:
             folder = Path(tmp)
             result = subprocess.run(

@@ -55,7 +55,7 @@ def build_long_data(input_path: Path | None = None) -> pd.DataFrame:
         data = data[["ID", "control", "experiment"]].rename(
             columns={"control": "before", "experiment": "after"})
     else:
-        raise ValueError("Input must be an .xlsx research workbook or a .csv paired table.")
+        raise ValueError("Input must be an .xlsx workbook or a .csv paired table.")
     if data.empty:
         raise ValueError("Input must contain at least one complete pair.")
     if data["ID"].isna().any() or data["ID"].astype(str).str.strip().eq("").any():
@@ -139,7 +139,7 @@ def create_figure(data: pd.DataFrame):
         axis.set_zlim(low - padding, high + padding)
     axis.set_xticks([0, 1], labels=["Control group", "Experiment group"])
     axis.set_yticks([])
-    axis.set_zlabel("")
+    axis.set_zlabel("Lesion score")
     axis.tick_params(axis="x", labelsize=10, pad=2)
     axis.tick_params(axis="z", labelsize=9, pad=2)
     axis.view_init(elev=23, azim=-58)
@@ -164,7 +164,7 @@ def save_outputs(output_dir: Path | None = None, input_path: Path | None = None,
 
     data = assign_depth_positions(build_long_data(input_path), seed=seed)
     folder.mkdir(parents=True, exist_ok=True)
-    figure, _ = create_figure(data)
+    figure, axis = create_figure(data)
     paths = {
         "png": folder / "paired_depth_plot.png",
         "svg": folder / "paired_depth_plot.svg",
@@ -172,7 +172,9 @@ def save_outputs(output_dir: Path | None = None, input_path: Path | None = None,
     }
     try:
         for path in paths.values():
-            figure.savefig(path, dpi=300, bbox_inches="tight", facecolor="white")
+            # Axes3D's tight bounds can omit the projected vertical-axis label.
+            figure.savefig(path, dpi=300, bbox_inches="tight",
+                           bbox_extra_artists=[axis.zaxis.label], facecolor="white")
     finally:
         plt.close(figure)
     return paths
