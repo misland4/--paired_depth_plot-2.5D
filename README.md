@@ -33,7 +33,7 @@ Use **Python 3.13**. The exact tested dependencies are pinned in `requirements.t
 | Matplotlib | 3.10.6 |
 | openpyxl | 3.1.5 |
 
-The verified environment is **Windows 11 Pro, Python 3.13.9**. Other operating systems and Python versions have not been tested for this release. SciPy is not used by this script. Tests use Python's built-in `unittest`, so `pytest` is not required.
+The locally verified environment is **Windows 11 Pro, Python 3.13.9**. Additional automated installation, all tests and research-demo generation have passed on GitHub-hosted Windows, Ubuntu and macOS runners using Python 3.13. See the [reproduction record](docs/validation.md) for run links and the exact environment snapshots. Other Python versions have not been tested for this release. SciPy is not used by this script. Tests use Python's built-in `unittest`, so `pytest` is not required.
 
 ### Hardware
 
@@ -59,7 +59,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 ```
 
-Use `.venv/bin/python` in place of `.venv\Scripts\python.exe` in the following commands. These command variants have not been tested on macOS/Linux for this release.
+Use `.venv/bin/python` in place of `.venv\Scripts\python.exe` in the following commands. The automated checks validate script execution on GitHub-hosted macOS and Ubuntu; these local virtual-environment setup commands use the standard platform layout.
 
 **Measured installation:** creating a new Windows virtual environment took 3.4 seconds, and installing dependencies took 41.6 seconds in one run. Some wheels were cached; network speed and cache state affect these times. See the [reproduction record](docs/validation.md) for details.
 

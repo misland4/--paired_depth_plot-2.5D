@@ -45,3 +45,15 @@ tzdata==2026.5
 The [Reproducibility checks workflow](https://github.com/misland4/--paired_depth_plot-2.5D/actions/workflows/ci.yml) installs dependencies, checks them, runs the complete suite and generates the research demo on Windows, Ubuntu and macOS with Python 3.13. Each run records its actual operating system and Python patch version. A configured matrix alone is not evidence of passing; inspect the individual job conclusions and logs.
 
 Demo PNG/PDF/SVG files are retained as workflow artifacts for seven days. Font substitutions can change typography between operating systems even when input values and pairing are identical.
+
+## Verified automated run
+
+The [initial version-1.0.0 validation run](https://github.com/misland4/--paired_depth_plot-2.5D/actions/runs/39546881373) completed successfully for commit `b128183c53d4b9d51941b39c0f62a2b24db6e362`. All three platform jobs passed dependency installation, `pip check`, the complete unit-test suite, research-demo generation and artifact upload.
+
+| GitHub-hosted runner family | Python series | Result |
+| --- | --- | --- |
+| Windows | 3.13 | Passed |
+| Ubuntu | 3.13 | Passed |
+| macOS | 3.13 | Passed |
+
+These are hosted-runner results rather than tests on every version of each operating system. Consult the run's environment step for exact versions. This documentation update does not change the validated plotting code, workbooks or dependencies.
