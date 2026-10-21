@@ -2,7 +2,7 @@
 
 ## Source and provenance
 
-`examples/research_pairs.xlsx` is a byte-for-byte copy of the supplied `Simulated dataset to demo the code(1).xlsx`; its original worksheet name `Simulated dataset` is unchanged. The repository filename is historical and does not establish data provenance. Whether this nine-pair example is simulated or actual measured data remains to be clarified; the author's explicit simulated-data response concerned the separate seven-row density example.
+`examples/research_pairs.xlsx` is a byte-for-byte copy of the supplied `Simulated dataset to demo the code(1).xlsx`; its original worksheet name `Simulated dataset` is unchanged. The project contact has confirmed that this nine-pair workbook contains **simulated demonstration data**, as does the seven-row example in the companion density-cloud repository. The historical repository filename does not imply measured research observations. This clarification resolves the pending provenance note in version 1.0.1.
 
 - Source SHA-256: `5aff67627188d3528e64b775abea7a2310dae2312189e4f5dce88d7e9a1717d6`.
 - Worksheet: `Simulated dataset`.
@@ -18,7 +18,7 @@
 | ID | Generated from input row order | Sequential display ID linking both values in a row | Not a supplied subject identifier |
 | Depth | Generated with seed 20260709 | Separates overlapping pairs for display | Not a measured variable |
 
-The author confirms that **each row contains paired samples from the same subject**. Column A is unused. The workbook contains nine pairs; the lack of subject identifiers means the number of distinct subjects across rows is not established.
+The author confirms that **each row represents paired samples from the same subject** in the simulated design. Column A is unused. The workbook contains nine simulated pairs; generated display IDs do not establish nine distinct real subjects.
 
 The formal metric and vertical-axis label are **Lesion score**, a dimensionless ordinal grading. Control values range from 1 to 3 and experiment values from 0 to 2. The authors have not provided the criteria for individual grades 0, 1, 2 and 3; the script does not assign clinical category definitions to them.
 

@@ -2,9 +2,9 @@
 
 [![Reproducibility checks](https://github.com/misland4/--paired_depth_plot-2.5D/actions/workflows/ci.yml/badge.svg)](https://github.com/misland4/--paired_depth_plot-2.5D/actions/workflows/ci.yml)
 
-A Python script for displaying overlapping paired observations with a reproducible display-only depth offset for each pair. The supplied example contains **9 control/experiment pairs**. The author confirms that each row contains matched samples from the same subject. The measured variable is **Lesion score**, a dimensionless ordinal grading.
+A Python script for displaying overlapping paired observations with a reproducible display-only depth offset for each pair. The supplied **simulated demonstration dataset** contains **9 control/experiment pairs**. Each row represents matched samples from the same subject in the example design. The plotted variable is **Lesion score**, a dimensionless ordinal grading.
 
-![Paired depth plot generated from the supplied paired example](docs/images/paired_depth_plot.png)
+![Paired depth plot generated from the supplied simulated example](docs/images/paired_depth_plot.png)
 
 The added depth dimension separates overlapping pairs; it is not a measured variable. Lines connect the two observations in each input row. The script does not perform significance testing.
 
@@ -87,9 +87,9 @@ The PNG is saved at 300 dpi; PDF and SVG are vector outputs. SVG fonts are conve
 
 ### Data provenance
 
-[Download the supplied paired workbook](examples/research_pairs.xlsx). It is a byte-for-byte copy of the supplied `Simulated dataset to demo the code(1).xlsx`, retaining the original worksheet name `Simulated dataset`. The repository filename is historical; it does not establish whether the example contains simulated or measured observations. That classification remains to be clarified for this nine-pair workbook.
+[Download the supplied paired workbook](examples/research_pairs.xlsx). It is a byte-for-byte copy of the supplied `Simulated dataset to demo the code(1).xlsx`, retaining the original worksheet name `Simulated dataset`. The project contact has confirmed that this nine-pair workbook is **simulated demonstration data**, as is the seven-row dataset in the companion density-cloud repository. The historical repository filename does not imply measured research observations.
 
-The script reads the nine pairs in `B2:C10` without changing scores or row order. Each row is a within-subject pair. Sequential display IDs are assigned because the workbook has no subject-ID column; nine pairs do not establish nine distinct subjects.
+The script reads the nine pairs in `B2:C10` without changing scores or row order. Each row represents a within-subject pair in the simulated example. Sequential display IDs are assigned because the workbook has no subject-ID column; nine pairs do not establish nine distinct subjects.
 
 Specific treatments, conditions, time points and final English group names will be updated upon publication of the paper. Until then the displayed column names remain `Control group` and `Experiment group`.
 
@@ -183,7 +183,7 @@ Use [GitHub Issues](https://github.com/misland4/--paired_depth_plot-2.5D/issues)
 
 ## Version and validation
 
-Current software version: **1.0.1**. See [CHANGELOG.md](CHANGELOG.md) and [Releases](https://github.com/misland4/--paired_depth_plot-2.5D/releases) for fixed versions. Local clean-environment checks passed. The badge above links to automated checks; consult each platform job for actual passing results.
+Current software version: **1.0.2**. See [CHANGELOG.md](CHANGELOG.md) and [Releases](https://github.com/misland4/--paired_depth_plot-2.5D/releases) for fixed versions. Local clean-environment checks passed. The badge above links to automated checks; consult each platform job for actual passing results.
 
 ## Authors
 
@@ -200,7 +200,7 @@ We would like to thank Shuo Yang for his assistance with this project.
 
 Please cite the software using [CITATION.cff](CITATION.cff), or GitHub's **Cite this repository** panel:
 
-Li, C., & Wang, Y. (2026). *Paired depth plot (2.5D)* (Version 1.0.1) [Computer software]. https://github.com/misland4/--paired_depth_plot-2.5D
+Li, C., & Wang, Y. (2026). *Paired depth plot (2.5D)* (Version 1.0.2) [Computer software]. https://github.com/misland4/--paired_depth_plot-2.5D
 
 The manuscript is **unpublished**. The authors request that users cite this code repository. Study details and the paper citation will be updated upon publication.
 

@@ -1,11 +1,16 @@
 # Changelog
 
+## 1.0.2 — 2026-10-21
+
+- Confirm the nine-pair workbook as simulated demonstration data following the project contact's clarification; both repositories use simulated examples. Pairing describes the simulated example design, without asserting actual measured subjects.
+- Resolve the version-1.0.1 provenance question in README and data/example documentation. Data bytes, plotting code and output figures are unchanged.
+
 ## 1.0.1 — 2026-10-21
 
 - Apply the authors' confirmed Apache-2.0 code license and CC BY 4.0 supplied-data/exported-figure license with explicit file scopes.
 - Align manuscript-method environment with Windows 11 / Python 3.13.9 and request software-repository citation while the paper is unpublished.
 - Document within-subject pairing and dimensionless ordinal Lesion score; add that vertical-axis label to the code and regenerated preview. Numerical scores and display-depth generation are unchanged.
-- Defer specific treatment/time-point labels and study context until publication; grade definitions and the nine-pair workbook provenance remain unspecified.
+- Defer specific treatment/time-point labels and study context until publication; grade definitions remain unspecified. The nine-pair workbook provenance was initially left pending and is clarified in version 1.0.2.
 
 ## 1.0.0 — 2026-10-21
 

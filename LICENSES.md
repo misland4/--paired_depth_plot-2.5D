@@ -12,7 +12,7 @@ The earlier example fixtures shipped with the software remain distinct from the 
 
 ## Suggested dataset/figure attribution
 
-Chunying Li and Yinghan Wang. *Paired depth plot (2.5D)*, version 1.0.1. https://github.com/misland4/--paired_depth_plot-2.5D. Dataset and exported figures: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Indicate any modifications to the reused material.
+Chunying Li and Yinghan Wang. *Paired depth plot (2.5D)*, version 1.0.2. https://github.com/misland4/--paired_depth_plot-2.5D. Dataset and exported figures: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Indicate any modifications to the reused material.
 
 Credit: Shuo Yang assisted with the project. See [CITATION.cff](CITATION.cff) for software citation metadata. The manuscript is unpublished; cite the code repository until the authors provide a paper citation.
 
