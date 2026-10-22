@@ -87,11 +87,13 @@ The PNG is saved at 300 dpi; PDF and SVG are vector outputs. SVG fonts are conve
 
 ### Data provenance
 
-[Download the supplied paired workbook](examples/research_pairs.xlsx). It is a byte-for-byte copy of the supplied `Simulated dataset to demo the code(1).xlsx`, retaining the original worksheet name `Simulated dataset`. The project contact has confirmed that this nine-pair workbook is **simulated demonstration data**, as is the seven-row dataset in the companion density-cloud repository. The historical repository filename does not imply measured research observations.
+[Download the supplied paired workbook](examples/research_pairs.xlsx). It is a copy of the supplied `Simulated dataset to demo the code(1).xlsx`, retaining the original worksheet name `Simulated dataset`. The project contact has confirmed that this nine-pair workbook is **simulated demonstration data**, as is the seven-row dataset in the companion density-cloud repository. The historical repository filename does not imply measured research observations.
 
 The script reads the nine pairs in `B2:C10` without changing scores or row order. Each row represents a within-subject pair in the simulated example. Sequential display IDs are assigned because the workbook has no subject-ID column; nine pairs do not establish nine distinct subjects.
 
 Specific treatments, conditions, time points and final English group names will be updated upon publication of the paper. Until then the displayed column names remain `Control group` and `Experiment group`.
+
+The repository workbook has its creator and last-modified-by properties removed. All other workbook entries, including cells, styles and sheet names, are unchanged. See [docs/data.md](docs/data.md) for the updated file hash.
 
 ## 4. Instructions for use
 
@@ -167,7 +169,7 @@ To reproduce the repository preview, run the supplied demo with seed `20260709` 
 | `.github/workflows/ci.yml` | Automated tests and demo generation |
 | `requirements.txt` | Pinned direct dependencies |
 | `requirements-windows-py313.lock.txt` | Complete tested Windows environment |
-| `CITATION.cff` | Software citation |
+| `CITATION.md` | Software citation |
 | `CHANGELOG.md` | Version history |
 | `LICENSE` / `LICENSES.md` | Code license and data/figure license scopes |
 
@@ -183,31 +185,24 @@ Use [GitHub Issues](https://github.com/misland4/--paired_depth_plot-2.5D/issues)
 
 ## Version and validation
 
-Current software version: **1.0.2**. See [CHANGELOG.md](CHANGELOG.md) and [Releases](https://github.com/misland4/--paired_depth_plot-2.5D/releases) for fixed versions. Local clean-environment checks passed. The badge above links to automated checks; consult each platform job for actual passing results.
+Current software version: **1.0.3**. See [CHANGELOG.md](CHANGELOG.md) and [Releases](https://github.com/misland4/--paired_depth_plot-2.5D/releases) for fixed versions. Local clean-environment checks passed. The badge above links to automated checks; consult each platform job for actual passing results.
 
 ## Authors
 
-Project creators and lead maintainers:
-
-- Chunying Li, Email: <lichying@fmmu.edu.cn>
-- Yinghan Wang, Email: <wang.yinghan@qq.com>
-
-## Credits
-
-We would like to thank Shuo Yang for his assistance with this project.
+Author information will be updated upon publication of the paper.
 
 ## Academic citation
 
-Please cite the software using [CITATION.cff](CITATION.cff), or GitHub's **Cite this repository** panel:
+Until publication, cite this repository by its project title, version and URL. See [CITATION.md](CITATION.md) for the interim citation:
 
-Li, C., & Wang, Y. (2026). *Paired depth plot (2.5D)* (Version 1.0.2) [Computer software]. https://github.com/misland4/--paired_depth_plot-2.5D
+*Paired depth plot (2.5D)* (Version 1.0.3) [Computer software]. https://github.com/misland4/--paired_depth_plot-2.5D
 
-The manuscript is **unpublished**. The authors request that users cite this code repository. Study details and the paper citation will be updated upon publication.
+The manuscript is unpublished. Author information will be updated upon publication of the paper.
 
 ## License
 
 The authors have selected **Apache License 2.0** for the code and **Creative Commons Attribution 4.0 International (CC BY 4.0)** for the supplied Excel dataset and figures exported by the code, including the README preview.
 
-See [LICENSE](LICENSE) for the code license, [the CC BY 4.0 legal text](LICENSES/CC-BY-4.0.txt) for the data/figure license, and [LICENSES.md](LICENSES.md) for file scopes and attribution details. Cite Chunying Li and Yinghan Wang, identify this repository and the version used, link the applicable license, and indicate any changes when reusing the dataset or figures under CC BY 4.0.
+See [LICENSE](LICENSE) for the code license, [the CC BY 4.0 legal text](LICENSES/CC-BY-4.0.txt) for the data/figure license, and [LICENSES.md](LICENSES.md) for file scopes and attribution details. Identify the project title, this repository and the version used, link the applicable license, and indicate any changes when reusing the dataset or figures under CC BY 4.0.
 
 These licenses cover the repository's supplied materials; users applying the scripts to other inputs must have permission to use those inputs.

@@ -1,7 +1,6 @@
 """A reproducible 2.5D display of overlapping paired observations.
 
-Authors: Chunying Li <lichying@fmmu.edu.cn>, Yinghan Wang <wang.yinghan@qq.com>
-Credits: Shuo Yang
+Author information will be updated upon publication of the paper.
 """
 from __future__ import annotations
 

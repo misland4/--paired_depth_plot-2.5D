@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3 — 2026-10-22
+
+- Replace personal names, emails and credits in the current README, script header and citation/license attribution with: Author information will be updated upon publication of the paper.
+- Use an interim CITATION.md without personal authors; defer structured author metadata until publication.
+- Remove creator/last-modified-by workbook properties, recording the new file hash. All cell data, formatting and other workbook entries are unchanged.
+
 ## 1.0.2 — 2026-10-21
 
 - Confirm the nine-pair workbook as simulated demonstration data following the project contact's clarification; both repositories use simulated examples. Pairing describes the simulated example design, without asserting actual measured subjects.

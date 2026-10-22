@@ -2,9 +2,11 @@
 
 ## Source and provenance
 
-`examples/research_pairs.xlsx` is a byte-for-byte copy of the supplied `Simulated dataset to demo the code(1).xlsx`; its original worksheet name `Simulated dataset` is unchanged. The project contact has confirmed that this nine-pair workbook contains **simulated demonstration data**, as does the seven-row example in the companion density-cloud repository. The historical repository filename does not imply measured research observations. This clarification resolves the pending provenance note in version 1.0.1.
+`examples/research_pairs.xlsx` is a copy of the supplied `Simulated dataset to demo the code(1).xlsx`; its original worksheet name `Simulated dataset` is unchanged. The project contact has confirmed that this nine-pair workbook contains **simulated demonstration data**, as does the seven-row example in the companion density-cloud repository. The historical repository filename does not imply measured research observations. This clarification resolves the pending provenance note in version 1.0.1.
 
-- Source SHA-256: `5aff67627188d3528e64b775abea7a2310dae2312189e4f5dce88d7e9a1717d6`.
+- Original source SHA-256 (before removing author properties): `5aff67627188d3528e64b775abea7a2310dae2312189e4f5dce88d7e9a1717d6`.
+
+- Repository workbook SHA-256 after removing creator/last-modified-by properties: `826283a4750987e5bdc66663421cb2d65ddb655bab22de41a7cbc16cb79bc803`. Only `docProps/core.xml` changed; all cells, styles, worksheets and other workbook entries are byte-identical to the source.
 - Worksheet: `Simulated dataset`.
 - Data range: B2:C10, nine complete control/experiment pairs.
 - Supplied data and exported figures: [CC BY 4.0](../LICENSES.md).
